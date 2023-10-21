@@ -1,17 +1,31 @@
-let elm = document.createElement('div');
-elm.classList.add('quotes');
-let ol = document.createElement('ol');
-let li = document.createElement('li');
-elm.append(ol);
-ol.append(li);
-li.append(quotes.quoteText);
+let root = document.querySelector('ul');
 
-class Scroll{
-    constructor(text,author){
-        this.text = text;
-        this.author=author;
+let max = 3;
+let index=0;
+
+function addQuotes(){
+    for(let i=0 ; i<max; i++){
+        let li = document.createElement('li');
+        li.classList.add('font-1');
+        let blockquote = document.createElement('li');
+        let cite = document.createElement('li');
+        blockquote.innerText = quotes[index].quoteText;
+        cite.innerText = quotes[index].quoteAuthor;
+        li.append(blockquote,cite);
+
+        root.append(li);
+        index++;
     }
 }
 
-// let scrolling = new Scroll('mpew','shreyas');
-// alert('scrolling');
+addQuotes();
+
+document.addEventListener('scroll',()=>{
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollHeight = document.documentElement.scrollHeight;
+    let clientHeight = document.documentElement.clientHeight;
+    if(scrollTop + clientHeight >= scrollHeight && index < quotes.length){
+        addQuotes();
+    }
+
+});

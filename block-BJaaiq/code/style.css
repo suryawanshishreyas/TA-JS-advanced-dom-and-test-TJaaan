@@ -1,3 +1,4 @@
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -17,3 +18,21 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+  h1{
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: underline;
+  }
+  .font-1{
+    list-style-type: none;
+    width: 500px;
+    margin: 0 auto;
+    font-size: 50px;
+    padding: 20px;
+    font-family: 'Changa One', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Tilt Neon', sans-serif;
+
+  }
+  
