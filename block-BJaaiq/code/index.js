@@ -17,9 +17,6 @@ function addQuotes(){
         index++;
     }
 }
-
-addQuotes();
-
 document.addEventListener('scroll',()=>{
     let scrollTop = document.documentElement.scrollTop;
     let scrollHeight = document.documentElement.scrollHeight;
@@ -29,3 +26,8 @@ document.addEventListener('scroll',()=>{
     }
 
 });
+
+window.addEventListener('DOMContentLoaded',()=>{
+    alert(`DOM Content Loaded`);
+    addQuotes();
+})
